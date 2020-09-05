@@ -13,22 +13,22 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="7dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="20dp"
         android:text="Add" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/allItems"
         android:layout_width="match_parent"
-        android:layout_height="609dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="45dp"
         android:layout_marginEnd="0dp"
-        android:layout_marginBottom="78dp" />
+        android:layout_marginBottom="82dp" />
 
     <EditText
         android:id="@+id/addingItem"
@@ -37,9 +37,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="29dp"
-        android:layout_marginEnd="108dp"
-        android:layout_marginBottom="7dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="Enter the item here"
         android:inputType=""
