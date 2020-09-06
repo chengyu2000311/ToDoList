@@ -65,6 +65,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="22dp"
         android:layout_marginBottom="335dp"
-        android:text="Mark as incompleted" />
+        android:text="Mark as uncompleted" />
 
 </RelativeLayout>

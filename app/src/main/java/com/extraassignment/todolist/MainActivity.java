@@ -126,8 +126,9 @@ public class MainActivity extends AppCompatActivity {
             } else if (data.getExtras().getInt("requestCode") == EditItem.MARK_AS_INCOMPLETED) {
                     setColor = 0xffff0000;
                     itemsAdapter.notifyItemChanged(position);
-                    Toast.makeText(getApplicationContext(), "Successfully Marked as Incompleted!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Successfully Marked as Uncompleted!", Toast.LENGTH_SHORT).show();
             }
+
         } else {
             Toast.makeText(getApplicationContext(), "requestCode: "+requestCode, Toast.LENGTH_SHORT).show();
             Log.w("MainActivity", "unknown call on activity result");
