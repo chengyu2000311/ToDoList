@@ -3,6 +3,7 @@ package com.extraassignment.todolist;
 import android.support.annotation.NonNull;
 import android.support.v7.view.menu.MenuView;
 import android.support.v7.widget.RecyclerView;
+import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
     public interface OnLongClickerListener {
         void onItemLongClicked(int position);
     }
+
 
     ArrayList<String> items;
     OnLongClickerListener longClickerListener;
@@ -72,6 +74,8 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
                     return true;
                 }
             });
+
+
         }
     }
 }

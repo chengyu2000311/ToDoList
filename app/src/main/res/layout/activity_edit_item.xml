@@ -12,6 +12,8 @@
         android:id="@+id/editItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="566dp"
         android:ems="10"
         android:hint="Update the Item here" />
 
@@ -21,8 +23,28 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="504dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="465dp"
         android:text="Update" />
+
+    <Button
+        android:id="@+id/moveUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="268dp"
+        android:layout_marginBottom="419dp"
+        android:text="Up" />
+
+    <Button
+        android:id="@+id/moveDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="267dp"
+        android:layout_marginBottom="335dp"
+        android:text="Down" />
 
 </RelativeLayout>
