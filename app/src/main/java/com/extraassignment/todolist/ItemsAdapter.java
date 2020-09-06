@@ -1,6 +1,8 @@
 package com.extraassignment.todolist;
 
+import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.v7.view.menu.MenuView;
 import android.support.v7.widget.RecyclerView;
 import android.view.DragEvent;
@@ -21,9 +23,9 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
     }
 
 
-    ArrayList<String> items;
-    OnLongClickerListener longClickerListener;
-    OnClickerListener clickerListener;
+    private ArrayList<String> items;
+    private OnLongClickerListener longClickerListener;
+    private OnClickerListener clickerListener;
 
     public ItemsAdapter(ArrayList<String> items, OnLongClickerListener longClickerListener, OnClickerListener clickerListener) {
         this.items = items;
@@ -55,9 +57,8 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             allItems = itemView.findViewById(android.R.id.text1);
-
+            allItems.setBackgroundColor(0xffff0000);
         }
-
         public void bind(String item) {
             allItems.setText(item);
             allItems.setOnClickListener(new View.OnClickListener() {
@@ -74,8 +75,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
                     return true;
                 }
             });
-
-
+            allItems.setBackgroundColor(MainActivity.setColor);
         }
     }
 }

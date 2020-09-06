@@ -8,6 +8,16 @@
     android:layout_height="match_parent"
     tools:context=".EditItem">
 
+    <Button
+        android:id="@+id/completeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="420dp"
+        android:text="Mark as Completed" />
+
     <EditText
         android:id="@+id/editItem"
         android:layout_width="match_parent"
@@ -23,8 +33,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="22dp"
-        android:layout_marginBottom="465dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="83dp"
         android:text="Update" />
 
     <Button
@@ -46,5 +56,15 @@
         android:layout_marginEnd="267dp"
         android:layout_marginBottom="335dp"
         android:text="Down" />
+
+    <Button
+        android:id="@+id/incompleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="335dp"
+        android:text="Mark as incompleted" />
 
 </RelativeLayout>

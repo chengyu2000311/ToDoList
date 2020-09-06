@@ -23,12 +23,13 @@ public class MainActivity extends AppCompatActivity {
     public static final String KEY_ITEM_TEXT = "item_text";
     public static final String KEY_ITEM_POSITION = "item_position";
     public static final int EDIT_TEXT_CODE = 20;
+    public static int setColor = 0xffff0000;
 
-    ArrayList<String> items;
-    Button addButton;
-    EditText addingItem;
-    RecyclerView allItems;
-    ItemsAdapter itemsAdapter;
+    private ArrayList<String> items;
+    private Button addButton;
+    private EditText addingItem;
+    private RecyclerView allItems;
+    private ItemsAdapter itemsAdapter;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -90,23 +91,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == EDIT_TEXT_CODE) {
+        if (requestCode == EDIT_TEXT_CODE && resultCode == RESULT_OK) {
+            String itemText = data.getStringExtra(KEY_ITEM_TEXT);
+            int position = data.getExtras().getInt(KEY_ITEM_POSITION);
             if (data.getExtras().getInt("requestCode") == EditItem.UPDATE_CODE) {
-                if (resultCode == RESULT_OK) {
-                    String itemText = data.getStringExtra(KEY_ITEM_TEXT);
-                    int position = data.getExtras().getInt(KEY_ITEM_POSITION);
-
                     items.set(position, itemText);
                     itemsAdapter.notifyItemChanged(position);
                     saveItems();
                     Toast.makeText(getApplicationContext(), "Item was updated!", Toast.LENGTH_SHORT).show();
-                }else {
-                    Log.w("MainActivity", "unknown call on activity result");
-                }
             }else if (data.getExtras().getInt("requestCode") == EditItem.MOVE_UP_CODE) {
-                if (resultCode == RESULT_OK) {
-                    String itemText = data.getStringExtra(KEY_ITEM_TEXT);
-                    int position = data.getExtras().getInt(KEY_ITEM_POSITION);
                     if (position==0) {
                         Toast.makeText(getApplicationContext(), "It is already at the first!", Toast.LENGTH_SHORT).show();
                         return;
@@ -116,13 +109,7 @@ public class MainActivity extends AppCompatActivity {
                     itemsAdapter.notifyItemMoved(position, position-1);
                     saveItems();
                     Toast.makeText(getApplicationContext(), "Moved Up!", Toast.LENGTH_SHORT).show();
-                }else {
-                    Log.w("MainActivity", "unknown call on activity result");
-                }
             } else if (data.getExtras().getInt("requestCode") == EditItem.MOVE_DOWN_CODE) {
-                if (resultCode == RESULT_OK) {
-                    String itemText = data.getStringExtra(KEY_ITEM_TEXT);
-                    int position = data.getExtras().getInt(KEY_ITEM_POSITION);
                     if (position==items.size()-1) {
                         Toast.makeText(getApplicationContext(), "It is already at the end!", Toast.LENGTH_SHORT).show();
                         return;
@@ -132,9 +119,14 @@ public class MainActivity extends AppCompatActivity {
                     itemsAdapter.notifyItemMoved(position, position+1);
                     saveItems();
                     Toast.makeText(getApplicationContext(), "Moved Down!", Toast.LENGTH_SHORT).show();
-                }else {
-                    Log.w("MainActivity", "unknown call on activity result");
-                }
+            } else if (data.getExtras().getInt("requestCode") == EditItem.MARK_AS_COMPLETED) {
+                    setColor = 0xff00ff00;
+                    itemsAdapter.notifyItemChanged(position);
+                    Toast.makeText(getApplicationContext(), "Successfully Marked as Completed!", Toast.LENGTH_SHORT).show();
+            } else if (data.getExtras().getInt("requestCode") == EditItem.MARK_AS_INCOMPLETED) {
+                    setColor = 0xffff0000;
+                    itemsAdapter.notifyItemChanged(position);
+                    Toast.makeText(getApplicationContext(), "Successfully Marked as Incompleted!", Toast.LENGTH_SHORT).show();
             }
         } else {
             Toast.makeText(getApplicationContext(), "requestCode: "+requestCode, Toast.LENGTH_SHORT).show();

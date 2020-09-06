@@ -28,7 +28,8 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="81dp" />
+        android:layout_marginBottom="81dp"
+        android:textAlignment="textEnd" />
 
     <EditText
         android:id="@+id/addingItem"
