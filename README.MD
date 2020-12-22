@@ -14,5 +14,7 @@ The following **nice to have** features are implemented:
 * [x] Your app includes a improved UI (icons, styling, colors, etc.)
 
 Here's a walkthrough of implemented user stories:
+
 <img src='https://github.com/chengyu2000311/ToDoList/blob/master/VideoWalkThrough.gif' title='VideoWalkThrough' width='' alt='Video Walkthrough' />
+
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
